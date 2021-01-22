@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boredom App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="container">
+        <div class="nav">
+          <div class="side-buttons">
+            <i class="fa fa-redo" onclick="location.reload()"></i>
+            <i class="fa fa-moon" onClick="toggleDisplayMode()"></i>
+          </div>
+          <div class="main-buttons">
+            <div>&#127969; Home</div>
+            <div>&#127936; Suggest an Activity</div>
+          </div>
+        </div>
+        <div class="section" id="section">
+          <h1 class="title">&#127936; Suggest an Activity</h1>
+          <form id="activity-form" class="activity-form">
+            <label for="email">Email (We won't spam you)</label></h1>
+            <input form="activity-form" id="email" type="email" placeholder="Enter your email address" />
+            <label for="title">Title</label></h1>
+            <input form="activity-form" id="title" type="text" placeholder="Enter the title of the activity" />
+            <label for="description">Description</label></h1>
+            <textarea form="activity-form" id="description" placeholder="Enter the description of the activity"></textarea>
+            <button form="activity-form" type="submit" id="submitForm">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="src/storage.js"></script>
+  <script src="src/displayMode.js"></script>
+  <script src="src/submitForm.js"></script>
+</html>
