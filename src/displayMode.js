@@ -16,13 +16,9 @@ function toggleDisplayMode() {
 function setDarkClassList() {
   let mode = window.localStorage.getItem("displayMode");
 
-  var elements = [
-    document.body,
-    document.getElementById("section"),
-    document.getElementById("activity-form"),
-  ];
+  var elements = [...document.getElementsByClassName("dark")];
 
-  if (elements && Array.isArray(elements)) {
+  if (elements.length > 0) {
     if (mode === "Night")
       elements.forEach((element) => {
         element?.classList.add("dark-mode");
@@ -31,7 +27,7 @@ function setDarkClassList() {
       elements.forEach((element) => {
         element?.classList.remove("dark-mode");
       });
-  } else throw Error("Elements parameter is not an array");
+  }
 }
 
 // Initialize display mode
