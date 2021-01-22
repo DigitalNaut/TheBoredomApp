@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #f3f4f6;
+  color: black;
+}
+
+a, a:active, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container {
+  width: 350px;
+  text-align: center;
+}
+
+.main-buttons {
+  font-size: medium;
+  display: flex;
+  margin: 1rem;
+}
+
+.main-buttons div {
+  margin: 1rem;
+  margin-right: 0.25rem;
+  cursor: pointer;
+}
+
+.side-buttons {
+  position: absolute;
+  display: flex;
+  margin: 1rem;
+  margin-right: 5%;
+  right: 0;
+}
+
+.side-buttons i {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #ea5455;
+  color: white;
+  font-size: small;
+  cursor: pointer;
+}
