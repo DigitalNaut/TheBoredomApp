@@ -13,18 +13,19 @@
   <body class="dark">
     <div class="app">
       <div class="container">
-        <div class="nav">
-          <div class="side-buttons">
-            <i class="fa fa-redo" onclick="location.reload()"></i>
-            <i class="fa fa-moon" onclick="toggleDisplayMode()"></i>
-          </div>
-          <div class="main-buttons">
+        <nav>
+          <div class="menu"><div class="hamburger"></div></div>
+          <div class="buttons main">
             <div><a href="/index.html">&#127969; Home</a></div>
             <div>
               <a href="/activity_form.html">&#127936; Suggest an Activity</a>
             </div>
           </div>
-        </div>
+          <div class="buttons side">
+            <i class="fa fa-redo" onclick="location.reload()"></i>
+            <i class="fa fa-moon" onclick="toggleDisplayMode()"></i>
+          </div>
+        </nav>
         <div id="section" class="dark section">
           <h1 class="title">&#127936; Suggest an Activity</h1>
           <form id="activity-form" class="dark activity-form">

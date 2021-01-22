@@ -13,6 +13,46 @@ body.dark-mode {
   color: white;
 }
 
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container {
+  max-width: 350px;
+  text-align: center;
+}
+
+.buttons.main {
+  font-size: medium;
+  display: flex;
+  margin: 1rem;
+}
+
+.buttons.main div {
+  margin: 1rem;
+  margin-right: 0.25rem;
+  cursor: pointer;
+}
+
+.buttons.side {
+  position: absolute;
+  display: flex;
+  margin: 1rem;
+  margin-right: 5%;
+  right: 0;
+}
+
+.buttons.side i {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #ea5455;
+  color: white;
+  font-size: small;
+  cursor: pointer;
+}
+
 .section {
   display: flex;
   flex-direction: column;
