@@ -1,25 +1,38 @@
+@media screen and (max-width: 349px) {
+  .container {
+    width: 100vw;
+  }
+}
+
+@media screen and (min-width: 350px) {
+  .container {
+    width: 350px;
+  }
+}
+
 body.dark-mode {
   background-color: #111827;
   color: white;
 }
 
-.section.dark-mode  {
+.section.dark-mode {
   background-color: #1f2937;
   box-shadow: 0 0.25rem 0.25rem #101010;
 }
 
-.activity-form.dark-mode input, .activity-form.dark-mode textarea {
+.activity-form.dark-mode input,
+.activity-form.dark-mode textarea {
   background-color: #384151;
   color: white;
 }
 
 nav {
+  width: 350px;
   display: flex;
-  justify-content: flex-end;
 }
 
 .container {
-  max-width: 350px;
+  display: flex;
   text-align: center;
 }
 
@@ -56,6 +69,7 @@ nav {
 .section {
   display: flex;
   flex-direction: column;
+  width:inherit;
   text-align: left;
   background-color: #fafafa;
   padding: 2rem;
