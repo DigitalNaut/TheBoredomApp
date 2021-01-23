@@ -21,7 +21,9 @@ function validateForm(event) {
     let isActivitySaved = saveActivity(formTitle.value, formDescription.value);
     if (isActivitySaved) {
       alert("Your activity was saved!");
-      activityForm?.reset();
+      formEmail.value = "";
+      formTitle.value = "";
+      formDescription.value = "";
     } else alert("Your activity couldn't be saved! :(");
   } else {
     alert("Please fill out the form correctly. All fields are required.");
