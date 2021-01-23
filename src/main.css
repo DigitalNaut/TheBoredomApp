@@ -4,6 +4,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+html {
+  overflow: hidden;
+}
+
 @media screen and (max-width: 630px) {
   nav > .buttons {
     visibility: hidden;
