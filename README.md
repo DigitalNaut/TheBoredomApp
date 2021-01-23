@@ -1,4 +1,4 @@
-# BoredomApp
+# The Boredom App
 First coding challenge for Hackademy using plain vanilla JS/CSS/HTML
  
 Note: The activity submission form doesn't actually store the email, but it was only added as part of the requirements for the challenge. 
