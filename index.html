@@ -22,7 +22,9 @@
     <div class="app">
       <div class="container">
         <nav>
-          <div class="menu"><div class="hamburger"></div></div>
+          <div class="menu" onclick="toggleMenu()">
+            <div class="dark hamburger"></div>
+          </div>
           <div class="buttons main">
             <div><a href="./index.html">&#127969; Home</a></div>
             <div>
@@ -34,12 +36,28 @@
             <i class="fa fa-moon" onclick="toggleDisplayMode()"></i>
           </div>
         </nav>
-        <div class="section">
-          <p>Press space bar or the generate button above (&#128187;) | Tap here (&#128241;) to generate an activity</p>
+        <div class="dark menu overlay">
+          <div><a href="./index.html">&#127969; Home</a></div>
+          <div>
+            <a href="./activity_form.html">&#127936; Suggest an Activity</a>
+          </div>
+          <div><a href="#">&#10084;&#65039; Sponsor Us</a></div>
+          <div><a href="#">&#127758; Community</a></div>
+          <div onclick="toggleDisplayMode()">
+            <a href="#"><i class="fa fa-moon"></i> Toggle Theme</a>
+          </div>
+        </div>
+        <div class="section" onclick="suggestActivity()">
+          <p id="activitySuggestionTitle" class="suggestion title"></p>
+          <p id="activitySuggestionDescription">
+            Press space bar or the generate button above (&#128187;) | Tap here
+            (&#128241;) to generate an activity
+          </p>
         </div>
       </div>
     </div>
   </body>
   <script src="src/storage.js"></script>
   <script src="src/displayMode.js"></script>
+  <script src="src/menu.js"></script>
 </html>
