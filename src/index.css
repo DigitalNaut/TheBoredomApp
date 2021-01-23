@@ -33,3 +33,13 @@ body.dark-mode {
   height: 0.75rem;
   font-size: smaller;
 }
+
+.suggestion.title {
+  font-size: xx-large;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.suggestion.title {
+  font-size: large;
+}

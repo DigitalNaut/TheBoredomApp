@@ -26,10 +26,12 @@ function storageAvailable(type) {
   }
 }
 
+var isSotrageAvailable = storageAvailable("localStorage");
+
 // Initialize night mode
 var localStorageAavailable;
-if (storageAvailable("localStorage")) {
-  if(window.localStorage.getItem("displayMode") === null)
+if (isSotrageAvailable) {
+  if (window.localStorage.getItem("displayMode") === null)
     window.localStorage.setItem("displayMode", "Day");
 
   let mode = window.localStorage.getItem("displayMode");
@@ -40,3 +42,41 @@ if (storageAvailable("localStorage")) {
   localStorageAavailable = false;
   console.log("Local storage is not available");
 }
+
+function loadActivities() {
+  try {
+    if (isSotrageAvailable) {
+      let activitiesLoaded = JSON.parse(
+        window.localStorage.getItem("activities")
+      );
+
+      if (activitiesLoaded) return activitiesLoaded;
+      else return activities;
+    }
+  } catch (e) {
+    console.log(e);
+    return activities;
+  }
+}
+
+function saveActivity(title, description) {
+  try {
+    let loadedActivities = loadActivities();
+
+    window.localStorage.setItem(
+      "activities",
+      JSON.stringify([{ title, description }, ...loadedActivities])
+    );
+
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+document.body.onkeyup = function (e) {
+  if (e.keyCode == 27) {
+    if (confirm("Delete stored activities?"))
+      window.localStorage.removeItem("activities");
+  }
+};

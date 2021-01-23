@@ -35,14 +35,14 @@
     <div class="container">
         <div id="section" class="dark section">
           <h1 class="title">&#127936; Suggest an Activity</h1>
-          <form id="activity-form" class="dark activity-form">
+          <form id="activityForm" class="dark activity-form">
             <label for="email">Email (We won't spam you)</label></h1>
-            <input form="activity-form" id="email" type="email" placeholder="Enter your email address" />
+            <input disabled form="activity-form" id="formEmail" type="email" placeholder="Enter your email address" required>
             <label for="title">Title</label></h1>
-            <input form="activity-form" id="title" type="text" placeholder="Enter the title of the activity" />
+            <input disabled form="activity-form" id="formTitle" type="text" placeholder="Enter the title of the activity" required>
             <label for="description">Description</label></h1>
-            <textarea form="activity-form" id="description" placeholder="Enter the description of the activity"></textarea>
-            <button form="activity-form" type="submit" id="submitForm">Submit</button>
+            <textarea disabled form="activity-form" id="formDescription" placeholder="Enter the description of the activity" required></textarea>
+            <button disabled form="activity-form" type="submit" id="submitFormButton">Submit</button>
           </form>
         </div>
       </div>
