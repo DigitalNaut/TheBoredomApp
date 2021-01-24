@@ -1,6 +1,6 @@
-var activities = [];
 var lastActivityIndex = -1;
 
+var activities = [];
 activities.push({
   title: "Learn a new language",
   description:
@@ -25,10 +25,9 @@ activities.push({
   url: "https://www.youtube.com/watch?v=vrAMRxBB5KI",
 });
 activities.push({
-  title: "Paint a landscape",
-  description:
-    "Ever wondered how people type lightning-speed fast? They're using a technique called 'touch typing'. Here's a link to get you started!",
-  url: "https://www.youtube.com/watch?v=vrAMRxBB5KI",
+  title: "Suggest an activity",
+  description: "Perhaps a great activity would be to create an activity!",
+  url: "./activity_form.html",
 });
 
 if (isSotrageAvailable) {
@@ -73,3 +72,9 @@ function suggestActivity() {
     }
   }
 }
+
+document.body.onkeyup = function (e) {
+  if (e.keyCode == 32) {
+    suggestActivity();
+  }
+};
