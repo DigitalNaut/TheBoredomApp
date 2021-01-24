@@ -82,9 +82,3 @@ function deleteStoredActivities(andReload = false) {
   if (confirmed) window.localStorage.removeItem("activities");
   if (andReload) location.reload();
 }
-
-document.body.onkeyup = function (e) {
-  if (e.keyCode == 27) {
-    deleteStoredActivities();
-  }
-};

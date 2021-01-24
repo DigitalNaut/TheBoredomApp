@@ -24,33 +24,46 @@ activities.push({
     "Ever wondered how people type lightning-speed fast? They're using a technique called 'touch typing'. Here's a link to get you started!",
   url: "https://www.youtube.com/watch?v=vrAMRxBB5KI",
 });
+activities.push({
+  title: "Paint a landscape",
+  description:
+    "Ever wondered how people type lightning-speed fast? They're using a technique called 'touch typing'. Here's a link to get you started!",
+  url: "https://www.youtube.com/watch?v=vrAMRxBB5KI",
+});
 
 if (isSotrageAvailable) {
   if (!window.localStorage.getItem("activities"))
     window.localStorage.setItem("activities", JSON.stringify(activities));
 }
 
+const activityTitleComposer = ({ url, title }) =>
+  `${
+    url ? "<a href='" + url + "' target='_blank' ref='noreferrer' '>" : ""
+  } ${title} ${url ? " <i class='fa fa-external-link-alt'></i></a>" : ""}`;
+
+const activityFactory = (title, { description }) => {
+  activitySuggestionTitle.innerHTML = title;
+  activitySuggestionDescription.innerHTML = description;
+};
+
+let activityIndex = -1;
+let loadedActivities = null;
 function suggestActivity() {
   if (!menuOpen) {
     if (activitySuggestionDescription && activitySuggestionTitle) {
-      let loadedActivities = loadActivities();
+      if (loadedActivities === null) loadedActivities = loadActivities();
 
       if (loadedActivities.length) {
-        let randomValue = Math.floor(Math.random() * loadedActivities.length);
-        let randomActivity = loadedActivities[randomValue];
+        activityIndex =
+          ++activityIndex >= loadedActivities.length ? 0 : activityIndex; // Increment & loop around value if next index reaches length of array
 
-        activitySuggestionTitle.innerHTML = `${
-          randomActivity.url
-            ? "<a href='" +
-              randomActivity.url +
-              "' target='_blank' ref='noreferrer' '>"
-            : ""
-        } ${randomActivity.title} ${
-          randomActivity.url
-            ? " <i class='fa fa-external-link-alt'></i></a>"
-            : ""
-        }`;
-        activitySuggestionDescription.innerHTML = randomActivity.description;
+        let nextValue = activityIndex;
+        let sugestedActivity = loadedActivities[nextValue];
+
+        activityFactory(
+          activityTitleComposer(sugestedActivity),
+          sugestedActivity
+        );
       } else {
         activitySuggestionTitle.innerHTML =
           "No activities found, not even the hard-coded ones &#128542";
@@ -60,4 +73,3 @@ function suggestActivity() {
     }
   }
 }
-
