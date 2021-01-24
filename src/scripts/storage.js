@@ -74,9 +74,17 @@ function saveActivity(title, description) {
   }
 }
 
+function deleteStoredActivities(andReload = false) {
+  let confirmed = confirm(
+    `Delete stored activities${andReload ? " and reload?" : "?"}`
+  );
+
+  if (confirmed) window.localStorage.removeItem("activities");
+  if (andReload) location.reload();
+}
+
 document.body.onkeyup = function (e) {
   if (e.keyCode == 27) {
-    if (confirm("Delete stored activities?"))
-      window.localStorage.removeItem("activities");
+    deleteStoredActivities();
   }
 };
